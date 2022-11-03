@@ -1,0 +1,408 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@300;400;700&display=swap');
+
+:root{
+    /* Colours */
+    --colour-charcoal: rgba(20, 20, 20, 1);
+    --colour-transparent: #0000;
+    --colour-nav-base: #555f;
+    --colour-nav: #000;
+    --colour-nav-base-hover: #222f;
+    --colour-nav-hover: #555f;
+
+    --main-top: 160px;
+    --main-display: initial;
+    --menu-visibility: visible;
+    --nav-display: initial;
+
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    /*
+    background-color: #0003;
+    */
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Rokkitt', 'Helvetica Neue';
+}
+
+body{
+}
+
+img{
+    border: 3px solid rgb(20,20,20);
+    border-radius: 10px;
+    background-clip: padding-box;
+    box-shadow: 0px 10px 10px -5px black;
+    margin-bottom: 20px;
+}
+
+.background-image{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-image: url("images/main-background.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(5px);
+    z-index: -3;
+}
+
+.background-gradient, .background-gradient-top{
+    position: fixed;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(black 240px, rgba(0,0,0,0), black calc(100% - 100px));
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
+.background-gradient-top{
+    background: linear-gradient(black, black 245px, rgba(0,0,0,0) 265px, rgba(0,0,0,0) calc(100% - 100px), black calc(100% - 80px));
+    z-index: 1;
+}
+
+hr {
+    border: 1px solid white;
+    display: relative;
+}
+
+header{
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    height: 100px;
+    color: #fff;
+    transition: all 0.5s ease-out;
+    z-index: 2;
+}
+
+header h1{
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 300;
+    width: 100%;
+    position: absolute;
+    top: 30px;
+}
+
+header hr{
+    width: 100%;
+    position: absolute;
+    bottom: -1px;
+}
+
+nav{
+    position: fixed;
+    top: 100px;
+    margin-top: 20px;
+    margin-left: calc(50% - 350px);
+    max-width: 700px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 20px;
+    z-index: 2;
+}
+
+nav button{
+    background: linear-gradient(var(--colour-nav-base), var(--colour-nav));
+    color: #fff;
+    width: 200px;
+    height: 50px;
+    font-size: 1.5rem;
+    position: relative;
+    /*
+    transition: background 0.5s linear;
+    */
+}
+
+nav button{
+    display: initial;
+    border: 1px solid #fff;
+    border-radius: 25px;
+}
+
+nav button:hover{
+    background: linear-gradient(var(--colour-nav-base-hover), var(--colour-nav-hover));
+}
+
+nav button::before, nav button::after{
+    content: "";
+    background: #fff;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 15px;
+    z-index: 10;
+    display: var(--nav-display);
+}
+nav button::before{
+    left: 10px;
+}
+
+nav button::after{
+    right: 10px;
+
+}
+
+nav button span{
+    display: var(--nav-display);
+}
+
+main{
+    margin-top: var(--main-top);
+    margin-left: calc(50% - 350px);
+    max-width: 700px;
+    
+    background: url(images/menu-background-02.jpg);
+    background-size: auto;
+
+    border: 2px solid rgba(0,0,0,0.2);
+    border-radius: 20px;
+
+    box-shadow: 0px 10px 20px -5px;
+
+    position: relative;
+    margin-bottom: 100px;
+    
+}
+
+.menu, .content{
+    padding: 10px;
+}
+
+h2{
+    font-size: 1.5rem;
+    width: fit-content;
+    margin: auto auto 5px auto;
+}
+
+.menu hr, .content hr{
+    border: 1px solid black;
+    margin: 0% 25% 20px 25%;
+}
+
+.menu ul li{
+    list-style-type: none;
+    margin-bottom: 10px;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.menu ul li hr
+{
+    display: none;
+}
+
+.menu dl{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        'name name name'
+        'desc pic ingr';
+    grid-gap: 5px;
+}
+
+.menu dt{
+    grid-area: name;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.menu dd{
+    grid-area: desc;
+    text-align: right;
+}
+
+.menu dd:nth-of-type(2){
+    grid-area: pic;
+    text-align: center;
+}
+
+.menu dd:nth-of-type(3){
+    grid-area: ingr;
+    text-align: left;
+}
+
+.image-menu-item{
+    width: 200px;
+}
+
+.content div{
+    overflow: hidden;
+    line-height: .9rem;
+    padding: 10px;
+    text-align: justify;
+}
+
+.image-story{
+    width: 300px;
+}
+/*
+*/
+.image-story-01, .image-story-03, .image-story-05{
+    float: left;
+    margin-right: 20px;
+}
+
+.image-story-02, .image-story-04{
+    float: right;
+    margin-right: 0px;
+    margin-left: 20px;
+}
+
+.hidden{
+    display: none;
+}
+
+footer{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+footer button{
+    border: 2px solid #0000;
+    border-radius: 25px;
+    background: #0000;
+    color: #fff;
+    width: 150px;
+    height: 50px;
+    margin: 0px 10px;
+    font-size: 1.5rem;
+    position: relative;
+}
+
+footer button:hover{
+    background: #fff3;
+    border: 2px solid #fff;
+}
+
+footer hr{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    border: 2px solid white;
+}
+
+@media only screen and (max-width: 750px) {
+    /*
+    */
+    :root{
+        --main-top: 120px;
+    }
+
+    nav {
+        row-gap: 10px;
+    }
+
+    header{
+        height: 75px;
+    }
+
+    header h1{
+        font-size: 1.5rem;
+        top: 25px;
+    }
+
+    nav{
+        top: 75px;
+        width: 500px;
+        margin-left: calc(50% - 250px);
+    }
+
+    nav button{
+        font-size: 1rem;
+        width: 150px;
+        height: 2rem;
+    }
+
+    .button-nav::before, .button-nav::after{
+        top: 7px;
+    }
+
+    main{
+        width: 500px;
+        margin-left: calc(50% - 250px);
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    
+    :root{
+        --nav-display: none;
+        --main-top: 90px;
+    }
+
+    .background-gradient{
+        background: linear-gradient(purple, purple 160px, rgba(0,0,0,0) 170px, rgba(0,0,0,0) calc(100% - 100px), black calc(100% - 80px));
+    }
+
+    .background-gradient-top{
+        background: linear-gradient(red, red 160px, rgba(0,0,0,0) 170px, rgba(0,0,0,0) calc(100% - 100px), black calc(100% - 80px));
+    }
+
+    header h1{
+        top: 25px;
+    }
+
+    nav{
+        width: 400px;
+        margin-left: calc(50% - 200px);
+    }
+
+    nav button{
+        width: 50px;
+    }
+    .button-nav-beverages{
+        width: 100px;
+    }
+
+    main{
+        width: 300px;
+        margin-left: calc(50% - 150px);
+    }
+
+    .menu ul li{
+        width: 100%;
+        text-align: center;
+        margin: 20px 0px;
+    }
+    
+    .menu ul li hr
+    {
+        color:rgba(20, 20, 20, 1);
+        position: relative;
+        bottom: -18px;
+    }
+
+    .image-story, .image-menu-item{
+        float: top;
+        margin: 10px 40px 20px;
+        width: 200px;
+    }
+
+}

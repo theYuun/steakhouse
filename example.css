@@ -1,0 +1,329 @@
+:root{
+
+    /* :::FONTS::: */
+    --font-acme: 'Acme', sans-serif;
+    --font-anaheim: 'Anaheim', sans-serif;
+    --font-chakra: 'Chakra Petch', sans-serif;
+
+    --burger-menu-normal: #00000033;
+    --burger-menu-hover: #00000000;
+    --burger-menu-color: var(--burger-menu-normal);
+    
+    --burger-menu-display-normal: none;
+    --burger-menu-display-small: unset;
+    --burger-menu-display: var(--burger-menu-display-normal);
+
+    --navbar-width-normal: 300px;
+    --navbar-width-small: 100%;
+    --navbar-width: var(--navbar-width-normal);
+    
+    --navbar-height-normal: 100%;
+    --navbar-height-small: 75px;
+    --navbar-height-hover: 30%;
+    --navbar-height: var(--navbar-height-normal);
+    
+    --navlinks-display-normal: initial;
+    --navlinks-display-small: none;
+    --navlinks-display-hover: initial;
+    --navlinks-display: var(--navlinks-display-normal);
+    
+    --navlink-background-normal: #00000000;
+    --navlink-background-small: #ddbb55;
+    --navlink-background: var(--navlink-background-color-normal);
+    
+    --navlink-background-hover-normal: linear-gradient(to top right, #ffffff55, #ffffff00);
+    --navlink-background-hover-small: #ddbb55;
+    --navlink-background-hover: var(--navlink-background-hover-normal);
+    
+    --main-doc-top-normal: 0px;
+    --main-doc-top-small: 90px;
+    --main-doc-top-hover: 300px;
+    --main-doc-top: var(--main-doc-top-normal);
+    
+    --main-doc-left-normal: 300px;
+    --main-doc-left-small: 0px;
+    --main-doc-left: var(--main-doc-left-normal);
+    
+    --main-section-margin-normal: 0px 20px;
+    --main-section-margin-small: 70px 20px 0px 20px;
+    --main-section-margin: var(--main-section-margin-normal);
+    
+    --main-section-padding-normal: 0px;
+    --main-section-padding-small: 70px 0px 0px 0px
+    --main-section-padding: var(--main-section-margin-normal);
+
+    /* :::Mask::: */
+    --mask-size: 0%;
+}
+
+@property --mask-size{
+    syntax: "<percentage>";
+    initial-value: 0%;
+    inherits: false;
+}
+
+@keyframes target-section{
+    0%{
+        margin-left: 100%;
+    }
+    30%{
+        background-color: #00000000;
+        margin-left: 20px;
+    }
+    31%{
+        background-color: #00000033;
+    }
+    100%{
+        background-color: #00000000;
+    }
+}
+
+*{
+    box-sizing: border-box;
+    /*border: #00000077 dashed 1px;*/
+}
+
+::-webkit-scrollbar{
+    width: 5px;
+}
+
+::-webkit-scrollbar-track{
+    background: #ddaa66;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #884400bb;
+}
+
+body{
+    background: linear-gradient(to bottom, #ddbb5577, #ddbb55dd);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: var(--font-chakra);
+}
+
+#navbar{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    padding-top: 70px;
+    
+    /**/ width: var(--navbar-width);
+    /**/ height: var(--navbar-height);
+    
+    border-right: #aa7733 solid 1px;
+    overflow-y: auto;
+}
+
+.nav-header{
+    position: fixed;
+    top: 0px;
+    width: var(--navbar-width);
+    background-color: #ddbb55;
+    border: #aa7733 solid 1px;
+    padding-left: 20px;
+    height: 70px;
+    z-index: 10;
+}
+
+.burger-menu{
+    display: var(--burger-menu-display);
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    z-index: 100;
+}
+
+.burger-menu div{
+    background-color: var(--burger-menu-color);
+    width: 80%;
+    height: 10%;
+    margin: 5px;
+    z-index: 101;
+}
+
+.burger-menu:hover, .burger-menu div:hover, .nav-header:hover{
+    --burger-menu-color: #000000ff;
+    cursor: s-resize;
+}
+
+.nav-section{
+    position: relative;
+}
+
+.navlinks{
+    display: var(--navlinks-display);
+}
+
+#navbar a{
+    position: relative;
+    display: block;
+    width: calc(100%-40px);
+    border: #aa7733 solid 1px;
+    padding: 10px 0px 20px 30px;
+    background: var(--navlink-background);
+    height: 50px;
+}
+
+#navbar a:hover{
+    box-shadow: 0 0 2px 3px #995511 inset;
+    background: var(--navlink-background-hover);
+    --navlink-background: #ddbb5555;
+}
+
+.nav-text{
+    position: absolute;
+    top: 12px;
+    background-color: var(--navlink-background);
+    padding: 2px;
+    border-radius: 3px;
+
+    /* This will cancel mouse events from firing off and negating the hover effect needed for the mask */
+    pointer-events: none;
+}
+
+.mask{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    -webkit-mask-image: linear-gradient(to right, #00000000 30%, #00000055 50%);
+    mask-image: linear-gradient(to right, #00000000 30%, #00000055 50%, );
+    -webkit-mask-size: var(--mask-size);
+    mask-size: var(--mask-size);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    border: black dotted 1px;
+    
+    transition: --mask-size 0.15s;
+}
+
+
+.mask:hover{
+    --mask-size: 100%;
+}
+
+.mask-image{
+    width: 100%;
+    height: 100%;
+    background-image: url("https://hdclipartall.com/images/tech-clip-art-tech-clip-art-300_300.jpg");
+    user-select: none;
+}
+
+#main-doc{
+    position: absolute;
+    left: var(--main-doc-left);
+    top: 0px;
+    right: 0px;
+}
+
+.main-section{
+    border-bottom: #884400bb solid 1px;
+    margin: var(--main-section-margin);
+    padding: var(--main-section-padding);
+    overflow-x: hidden;
+}
+
+.main-section:target{
+    /*
+    // See if you can rather fade-animate this
+    background-color: #00000033;
+    margin: 30px;
+    */
+    animation-name: target-section;
+    animation-duration: 3s;
+    animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    animation-fill-mode: forward;
+}
+
+h1, h2, h3, h4, h5, h6{
+    padding-left: 20px;
+    font-family: var(--font-acme);
+}
+
+p{
+    padding: 10px;
+    padding-left: 30px;
+}
+
+ul{
+    margin-left: 30px;
+}
+
+li{
+    margin-bottom: 5px;
+}
+
+code{
+    display: block;
+    margin: 20px;
+    padding: 20px;
+    background-color: #55555533;
+    border-radius: 5px;
+    text-wrapping: wrap;
+    font-family: var(--font-anaheim);
+}
+
+.codeComment{
+    color: #119911;
+    font-family: var(--font-anaheim);
+}
+
+.codeIndent{
+    padding-left: 30px;
+}
+
+.inline-code{
+    display: inline;
+    padding: 2px 5px;
+    margin: 0px;
+}
+
+.data-types-list{
+    
+}
+
+.primitive-data-types{
+    
+}
+
+#Reference{
+    height: 100vh;
+}
+
+@media (max-width: 1000px){
+    
+    :root{
+        --burger-menu-display: var(--burger-menu-display-small);
+        --navbar-width: var(--navbar-width-small);
+        --navbar-height: var(--navbar-height-small);
+        --navlinks-display: var(--navlinks-display-small);
+        --navlink-background: var(--navlink-background-small);
+        --navlink-background-hover: var(--navlink-background-hover-small);
+        --main-doc-top: var(--main-doc-top-small);
+        --main-doc-left: var(--main-doc-left-small);
+        --main-section-margin: var(--main-section-margin-small);
+        --main-section-padding: var(--main-section-padding-small);
+    }
+    
+    #navbar{
+        border-bottom: #aa7733 solid 3px;
+    }
+    
+    #navbar:hover{
+        --navlinks-display: var(--navlinks-display-hover);
+        --navbar-height: var(--navbar-height-hover);
+    }
+    
+    #navbar a:active{
+        --navlinks-display: var(--navlinks-display-small);
+        --navbar-height: var(--navbar-height-small);
+    }
+    
+    #main-doc{
+        border-top: #aa7733 solid 3px;
+    }
+}
