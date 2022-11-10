@@ -25,3 +25,84 @@ document.querySelectorAll('.button-content').forEach(x => {
         document.querySelector('.content-' + x.innerText.toLowerCase()).classList.remove('hidden');
     });
 });
+
+// Getting Story Data from data.json
+
+const data = import('./data.json', { assert: { type: 'json' }});
+data.then((d) => FillMenu(d.default.menu[0]));// console.log(d.default.menu[0].categories[0].categoryId));
+
+let main = document.querySelector('main');
+function FillMenu(data)
+{
+    for(let menuCategory = 0; menuCategory < data.categories.length; menuCategory++)
+    {
+        let category = data.categories[menuCategory].categoryName;
+        let categoryTimes = [data.categories[menuCategory].slotTimeStart, data.categories[menuCategory].slotTimeEnd];
+        let section = document.createElement('section');
+        let sectionH = document.createElement('h2');
+        let sectionHHr = document.createElement('hr');
+        let sectionUl = document.createElement('ul')
+        section.appendChild(sectionH);
+        section.appendChild(sectionHHr);
+        section.appendChild(sectionUl);
+
+        let slotOptions = data.categories[menuCategory].slotOptions;
+        for(let slotOption = 0; slotOption < slotOptions.length; slotOption++)
+        {
+            let sectionUlLi = document.createElement('li');
+            let sectionUlLiDl = document.createElement('dl');
+            let sectionUlLiDlDt = document.createElement('dt');
+            let slotTitle = document.createElement('h3');
+            slotTitle.innerText = slotOptions[slotOption].optName;
+            sectionUlLiDlDt.appendChild(slotTitle);
+
+            let slotDescription = document.createElement('dd');
+            slotDescription.innerText = slotOptions[slotOption].optDescription;
+
+            let slotImageContainer = document.createElement('dd');
+            let slotImage = document.createElement('img');
+            //console.log('images/' + category + '-' + slotOptions[slotOption].optId + '.jpg');
+            slotImage.src = 'images/' + category + '-' + slotOptions[slotOption].optId + '.jpg';
+            slotImageContainer.appendChild(slotImage);
+
+            let slotIngredients = document.createElement('dd');
+            let ingredients = slotOptions[slotOption].optIngredients;
+            let doCapitalize = true;
+            for (let ingredient = 0; ingredient < ingredients.length; ingredient++)
+            {
+                //console.log(ingredients[ingredient]);
+                let ingr = ingredients[ingredient];
+                if(doCapitalize)
+                {
+                    ingr = ingredients[ingredient].substring(0,1).toUpperCase() + ingredients[ingredient].substring(1, ingredients[ingredient].length);
+                    doCapitalize = false;
+                }
+                slotIngredients.innerText += ingr;
+                if(ingredient < ingredients.length - 1)
+                    slotIngredients.innerText += ", ";
+                else
+                    slotIngredients.innerText += ".";
+
+                let alternatives = slotOptions[slotOption].optPriceAlternatives;
+                for(let alt = 0; alt < alternatives; alt++)
+                {
+                    /*
+
+                    Add code here to load in the alternatives
+                    Remember to add br's as well!
+
+                    */
+                }
+            }
+            
+            sectionUlLiDl.appendChild(sectionUlLiDlDt);
+            sectionUlLiDl.appendChild(slotDescription);
+            sectionUlLiDl.appendChild(slotImageContainer);
+            sectionUlLiDl.appendChild(slotIngredients);
+            sectionUlLi.appendChild(sectionUlLiDl);
+            sectionUl.appendChild(sectionUlLi);
+        }
+
+        main.appendChild(section);
+    }
+}

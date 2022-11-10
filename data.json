@@ -5,8 +5,8 @@
         {
             "categoryId": 100,
             "categoryName": "breakfast",
-            "slotTimeStart": "8",
-            "slotTimeEnd": "12",
+            "slotTimeStart": 8,
+            "slotTimeEnd": 12,
             "slotOptions": [
             {
                 "optId": 101,
@@ -35,11 +35,11 @@
                 }]
             },
             {
-                "optId": "102",
+                "optId": 102,
                 "optName": "Lorem ipsum",
                 "optDescription": "Dolor sit amet. Consectetur adipiscing elit. Soluta optio corrupti quos.",
                 "optIngredients": ["dolor", "sit amet", "consectetur", "adipiscing elit", "soluta optio", "corrupti", "quos"],
-                "optPriceCents": "9999",
+                "optPriceCents": 9999,
                 "optPriceAlternatives": [
                 {
                     "altId": 1021,
@@ -55,11 +55,11 @@
                 }]
             },
             {
-                "optId": "103",
+                "optId": 103,
                 "optName": "Lorem ipsum",
                 "optDescription": "Dolor sit amet. Consectetur adipiscing elit. Soluta optio corrupti quos.",
                 "optIngredients": ["dolor", "sit amet", "consectetur", "adipiscing elit", "soluta optio", "corrupti", "quos"],
-                "optPriceCents": "9999",
+                "optPriceCents": 9999,
                 "optPriceAlternatives": [
                 {
                     "altId": 1031,
@@ -76,10 +76,191 @@
             }]
         },
         {
-            "categoryId": "500",
+            "categoryId": 200,
+            "categoryName": "lunch",
+            "slotTimeStart": 12,
+            "slotTimeEnd": 16,
+            "slotOptions": [
+            {
+                "optId": 201,
+                "optName": "",
+                "optDescription": "",
+                "optIngredients": ["",""],
+                "optPriceCents": 0,
+                "optPriceAlternatives": [
+                {
+                    "altId": 0,
+                    "altName": "",
+                    "altOperation": "+",
+                    "altPrice": 0
+                },
+                {
+                    "altId": 0,
+                    "altName": "",
+                    "altOperation": "+",
+                    "altPrice": 0
+                }]
+            },
+            {
+                "optId": 202,
+                "optName": "",
+                "optDescription": "",
+                "optIngredients": ["",""],
+                "optPriceCents": 0,
+                "optPriceAlternatives": [
+                {
+                    "altId": 0,
+                    "altName": "",
+                    "altOperation": "+",
+                    "altPrice": 0
+                },
+                {
+                    "altId": 0,
+                    "altName": "",
+                    "altOperation": "+",
+                    "altPrice": 0
+                }]
+            },
+            {
+                "optId": 203,
+                "optName": "",
+                "optDescription": "",
+                "optIngredients": ["",""],
+                "optPriceCents": 0,
+                "optPriceAlternatives": [
+                {
+                    "altId": 0,
+                    "altName": "",
+                    "altOperation": "+",
+                    "altPrice": 0
+                },
+                {
+                    "altId": 0,
+                    "altName": "",
+                    "altOperation": "+",
+                    "altPrice": 0
+                }]
+            },
+            {
+                "optId": 204,
+                "optName": "",
+                "optDescription": "",
+                "optIngredients": ["",""],
+                "optPriceCents": 0,
+                "optPriceAlternatives": [
+                {
+                    "altId": 0,
+                    "altName": "",
+                    "altOperation": "+",
+                    "altPrice": 0
+                },
+                {
+                    "altId": 0,
+                    "altName": "",
+                    "altOperation": "+",
+                    "altPrice": 0
+                }]
+            }]
+        },
+        {
+            "categoryId": 300,
+            "categoryName": "dinner",
+            "slotTimeStart": 16,
+            "slotTimeEnd": 20,
+            "slotOptions": [
+            {
+                "optId": 301,
+                "optName": "",
+                "optDescription": "",
+                "optIngredients": ["",""],
+                "optPriceCents": 0,
+                "optPriceAlternatives": [
+                {
+                    "altId": 0,
+                    "altName": "",
+                    "altOperation": "+",
+                    "altPrice": 0
+                },
+                {
+                    "altId": 0,
+                    "altName": "",
+                    "altOperation": "+",
+                    "altPrice": 0
+                }]
+            },
+            {
+                "optId": 302,
+                "optName": "",
+                "optDescription": "",
+                "optIngredients": ["",""],
+                "optPriceCents": 0,
+                "optPriceAlternatives": [
+                {
+                    "altId": 0,
+                    "altName": "",
+                    "altOperation": "+",
+                    "altPrice": 0
+                },
+                {
+                    "altId": 0,
+                    "altName": "",
+                    "altOperation": "+",
+                    "altPrice": 0
+                }]
+            }]
+        },
+        {
+            "categoryId": 400,
+            "categoryName": "kids",
+            "slotTimeStart": 8,
+            "slotTimeEnd": 20,
+            "slotOptions": [
+            {
+                "optId": 401,
+                "optName": "",
+                "optDescription": "",
+                "optIngredients": ["",""],
+                "optPriceCents": 0,
+                "optPriceAlternatives": [
+                {
+                    "altId": 0,
+                    "altName": "",
+                    "altOperation": "+",
+                    "altPrice": 0
+                },
+                {
+                    "altId": 0,
+                    "altName": "",
+                    "altOperation": "+",
+                    "altPrice": 0
+                }]
+            },
+            {
+                "optId": 402,
+                "optName": "",
+                "optDescription": "",
+                "optIngredients": ["",""],
+                "optPriceCents": 0,
+                "optPriceAlternatives": [
+                {
+                    "altId": 0,
+                    "altName": "",
+                    "altOperation": "+",
+                    "altPrice": 0
+                },
+                {
+                    "altId": 0,
+                    "altName": "",
+                    "altOperation": "+",
+                    "altPrice": 0
+                }]
+            }]
+        },
+        {
+            "categoryId": 500,
             "categoryName": "beverages",
-            "slotTimeStart": "8",
-            "slotTimeEnd": "20",
+            "slotTimeStart": 8,
+            "slotTimeEnd": 20,
             "slotOptions": [
             {
                 "optId": 501,
@@ -105,53 +286,6 @@
                     "altName": "creamer",
                     "altOperation": "+",
                     "altPrice": 1000
-                }]
-            }]
-        },
-        {
-            "categoryId": 0,
-            "categoryName": "",
-            "slotTimeStart": 8,
-            "slotTimeEnd": 20,
-            "slotOptions": [
-            {
-                "optId": 0,
-                "optName": "",
-                "optDescription": "",
-                "optIngredients": ["",""],
-                "optPriceCents": 0,
-                "optPriceAlternatives": [
-                {
-                    "altId": 0,
-                    "altName": "",
-                    "altOperation": "+",
-                    "altPrice": 0
-                },
-                {
-                    "altId": 0,
-                    "altName": "",
-                    "altOperation": "+",
-                    "altPrice": 0
-                }]
-            },
-            {
-                "optId": 0,
-                "optName": "",
-                "optDescription": "",
-                "optIngredients": ["",""],
-                "optPriceCents": 0,
-                "optPriceAlternatives": [
-                {
-                    "altId": 0,
-                    "altName": "",
-                    "altOperation": "+",
-                    "altPrice": 0
-                },
-                {
-                    "altId": 0,
-                    "altName": "",
-                    "altOperation": "+",
-                    "altPrice": 0
                 }]
             }]
         }]
