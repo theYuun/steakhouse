@@ -66,6 +66,9 @@ function FillMenu(data)
             slotImageContainer.appendChild(slotImage);
 
             let slotIngredients = document.createElement('dd');
+let slotIngredientTitle = document.createElement('h4');
+slotIngredientTitle.innerText = 'Ingredients:';
+slotIngredientTitle.innerHTML += '<br>';
             let ingredients = slotOptions[slotOption].optIngredients;
             let doCapitalize = true;
             for (let ingredient = 0; ingredient < ingredients.length; ingredient++)
@@ -83,9 +86,18 @@ function FillMenu(data)
                 else
                     slotIngredients.innerText += ".";
 
+let pricingDd = document.createElement('dd');
+let pricingUl = document.createElement('ul');
+pricingDd.appendChild(pricingUl);
+let pricingLi = document.createElement('li');
+pricingUl.appendChild(pricingLi);
+pricingLi.innerText = '$ ' + slotOptions[slotOption].optPriceCents.toString();
                 let alternatives = slotOptions[slotOption].optPriceAlternatives;
                 for(let alt = 0; alt < alternatives; alt++)
                 {
+let pricingAltLi = document.createElement('li');
+pricingAltLi.innerText = alternatives[alt].name + ': ' + alternatives[alt].operation + ' $ ' + (alternatives[alt].price / 100).toString();;
+pricingUl.appendChild(pricingAltLi);
                     /*
 
                     Add code here to load in the alternatives
@@ -99,6 +111,7 @@ function FillMenu(data)
             sectionUlLiDl.appendChild(slotDescription);
             sectionUlLiDl.appendChild(slotImageContainer);
             sectionUlLiDl.appendChild(slotIngredients);
+            sectionUlLiDl.appendChild(pricingDd);
             sectionUlLi.appendChild(sectionUlLiDl);
             sectionUl.appendChild(sectionUlLi);
         }
