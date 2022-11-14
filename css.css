@@ -15,6 +15,9 @@
     --menu-visibility: visible;
     --nav-display: initial;
 
+    --bg-gradient-top-transition-start: 240px;
+    --bg-gradient-top-transition-stop: 260px;
+
 }
 
 html{
@@ -56,21 +59,16 @@ img{
     z-index: -3;
 }
 
-.background-gradient, .background-gradient-top{
+.background-gradient{
     position: fixed;
     top: 0px;
     height: 100%;
     width: 100%;
-    background: linear-gradient(black 240px, rgba(0,0,0,0), black calc(100% - 100px));
+    background: linear-gradient(black var(--bg-gradient-top-transition-start), rgba(0,0,0,0.1) var(--bg-gradient-top-transition-stop), rgba(0,0,0,0.5) calc(100% - 90px), black calc(100% - 70px));
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: -1;
-}
-
-.background-gradient-top{
-    background: linear-gradient(black, black 245px, rgba(0,0,0,0) 265px, rgba(0,0,0,0) calc(100% - 100px), black calc(100% - 80px));
-    z-index: 1;
+    pointer-events: none;
 }
 
 hr {
@@ -348,12 +346,10 @@ footer hr{
     */
     :root{
         --main-top: 120px;
+        --bg-gradient-top-transition-start: 170px;
+        --bg-gradient-top-transition-stop: 190px;
     }
-
-    nav {
-        row-gap: 10px;
-    }
-
+    
     header{
         height: 75px;
     }
@@ -367,6 +363,7 @@ footer hr{
         top: 75px;
         width: 500px;
         margin-left: calc(50% - 250px);
+        row-gap: 10px;
     }
 
     nav button{
@@ -390,14 +387,8 @@ footer hr{
     :root{
         --nav-display: none;
         --main-top: 90px;
-    }
-
-    .background-gradient{
-        background: linear-gradient(purple, purple 160px, rgba(0,0,0,0) 170px, rgba(0,0,0,0) calc(100% - 100px), black calc(100% - 80px));
-    }
-
-    .background-gradient-top{
-        background: linear-gradient(red, red 160px, rgba(0,0,0,0) 170px, rgba(0,0,0,0) calc(100% - 100px), black calc(100% - 80px));
+        --bg-gradient-top-transition-start: 135px;
+        --bg-gradient-top-transition-stop: 155px;
     }
 
     header h1{

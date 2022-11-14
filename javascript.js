@@ -17,6 +17,7 @@ function FillMenu(data)
         section.classList.add('menu-' + data.categories[menuCategory].categoryName.toLowerCase());
         section.classList.add('menu-' + data.categories[menuCategory].categoryClassAlternative.toLowerCase());
         let sectionH = document.createElement('h2');
+        sectionH.innerText = category.charAt(0).toUpperCase() + category.slice(1);
         let sectionHHr = document.createElement('hr');
         let sectionUl = document.createElement('ul')
         section.appendChild(sectionH);
