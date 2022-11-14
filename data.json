@@ -5,6 +5,7 @@
         {
             "categoryId": 100,
             "categoryName": "breakfast",
+            "categoryClassAlternative": "b",
             "slotTimeStart": 8,
             "slotTimeEnd": 12,
             "slotOptions": [
@@ -78,6 +79,7 @@
         {
             "categoryId": 200,
             "categoryName": "lunch",
+            "categoryClassAlternative": "l",
             "slotTimeStart": 12,
             "slotTimeEnd": 16,
             "slotOptions": [
@@ -165,6 +167,7 @@
         {
             "categoryId": 300,
             "categoryName": "dinner",
+            "categoryClassAlternative": "d",
             "slotTimeStart": 16,
             "slotTimeEnd": 20,
             "slotOptions": [
@@ -212,6 +215,7 @@
         {
             "categoryId": 400,
             "categoryName": "kids",
+            "categoryClassAlternative": "k",
             "slotTimeStart": 8,
             "slotTimeEnd": 20,
             "slotOptions": [
@@ -259,6 +263,7 @@
         {
             "categoryId": 500,
             "categoryName": "beverages",
+            "categoryClassAlternative": "bevs",
             "slotTimeStart": 8,
             "slotTimeEnd": 20,
             "slotOptions": [

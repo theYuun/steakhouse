@@ -1,31 +1,4 @@
 
-HideMenus();
-ShowStory();
-
-function HideMenus() {
-    document.querySelectorAll('.menu, .content').forEach(x => {
-        x.classList.add('hidden');
-    });
-}
-
-function ShowStory() {
-    document.querySelector('.content-story').classList.remove('hidden');
-}
-
-document.querySelectorAll('.button-nav').forEach(x => {
-    x.addEventListener('click', () => {
-        HideMenus();
-        document.querySelector('.menu-' + x.innerText.toLowerCase()).classList.remove('hidden');
-    });
-});
-
-document.querySelectorAll('.button-content').forEach(x => {
-    x.addEventListener('click', () => {
-        HideMenus();
-        document.querySelector('.content-' + x.innerText.toLowerCase()).classList.remove('hidden');
-    });
-});
-
 // Getting Story Data from data.json
 
 const data = import('./data.json', { assert: { type: 'json' }});
@@ -39,6 +12,10 @@ function FillMenu(data)
         let category = data.categories[menuCategory].categoryName;
         let categoryTimes = [data.categories[menuCategory].slotTimeStart, data.categories[menuCategory].slotTimeEnd];
         let section = document.createElement('section');
+        section.setAttribute('id', 'menu-' + data.categories[menuCategory].categoryName.toLowerCase());
+        section.classList.add('menu');
+        section.classList.add('menu-' + data.categories[menuCategory].categoryName.toLowerCase());
+        section.classList.add('menu-' + data.categories[menuCategory].categoryClassAlternative.toLowerCase());
         let sectionH = document.createElement('h2');
         let sectionHHr = document.createElement('hr');
         let sectionUl = document.createElement('ul')
@@ -63,12 +40,20 @@ function FillMenu(data)
             let slotImage = document.createElement('img');
             //console.log('images/' + category + '-' + slotOptions[slotOption].optId + '.jpg');
             slotImage.src = 'images/' + category + '-' + slotOptions[slotOption].optId + '.jpg';
+            slotImage.setAttribute('class', 'image-menu-item')
             slotImageContainer.appendChild(slotImage);
+            
+            let slotImageShadowLeft = document.createElement('div');
+            slotImageShadowLeft.setAttribute('class', 'image-menu-item-before');
+            slotImage.appendChild(slotImageShadowLeft);
+            let slotImageShadowRight = document.createElement('div');
+            slotImageShadowRight.setAttribute('class', 'image-menu-item-after');
+            slotImage.appendChild(slotImageShadowRight);
 
             let slotIngredients = document.createElement('dd');
-let slotIngredientTitle = document.createElement('h4');
-slotIngredientTitle.innerText = 'Ingredients:';
-slotIngredientTitle.innerHTML += '<br>';
+            let slotIngredientTitle = document.createElement('h4');
+            slotIngredientTitle.innerText = 'Ingredients:';
+            slotIngredientTitle.innerHTML += '<br>';
             let ingredients = slotOptions[slotOption].optIngredients;
             let doCapitalize = true;
             for (let ingredient = 0; ingredient < ingredients.length; ingredient++)
@@ -82,29 +67,29 @@ slotIngredientTitle.innerHTML += '<br>';
                 }
                 slotIngredients.innerText += ingr;
                 if(ingredient < ingredients.length - 1)
-                    slotIngredients.innerText += ", ";
+                slotIngredients.innerText += ", ";
                 else
-                    slotIngredients.innerText += ".";
-
-let pricingDd = document.createElement('dd');
-let pricingUl = document.createElement('ul');
-pricingDd.appendChild(pricingUl);
-let pricingLi = document.createElement('li');
-pricingUl.appendChild(pricingLi);
-pricingLi.innerText = '$ ' + slotOptions[slotOption].optPriceCents.toString();
-                let alternatives = slotOptions[slotOption].optPriceAlternatives;
-                for(let alt = 0; alt < alternatives; alt++)
-                {
-let pricingAltLi = document.createElement('li');
-pricingAltLi.innerText = alternatives[alt].name + ': ' + alternatives[alt].operation + ' $ ' + (alternatives[alt].price / 100).toString();;
-pricingUl.appendChild(pricingAltLi);
+                slotIngredients.innerText += ".";
+                
+            }
+            let pricingDd = document.createElement('dd');
+            let pricingUl = document.createElement('ul');
+            pricingDd.appendChild(pricingUl);
+            let pricingLi = document.createElement('li');
+            pricingUl.appendChild(pricingLi);
+            pricingLi.innerText = '$ ' + (slotOptions[slotOption].optPriceCents / 100).toString();
+            let alternatives = slotOptions[slotOption].optPriceAlternatives;
+            for(let alt = 0; alt < alternatives; alt++)
+            {
+                let pricingAltLi = document.createElement('li');
+                pricingAltLi.innerText = alternatives[alt].name + ': ' + alternatives[alt].operation + ' $ ' + (alternatives[alt].price / 100).toString();;
+                pricingUl.appendChild(pricingAltLi);
                     /*
 
                     Add code here to load in the alternatives
                     Remember to add br's as well!
 
                     */
-                }
             }
             
             sectionUlLiDl.appendChild(sectionUlLiDlDt);
@@ -118,4 +103,31 @@ pricingUl.appendChild(pricingAltLi);
 
         main.appendChild(section);
     }
+    HideMenus();
+    ShowStory();
 }
+
+
+function HideMenus() {
+    document.querySelectorAll('.menu, .content').forEach(x => {
+        x.classList.add('hidden');
+    });
+}
+
+function ShowStory() {
+    document.querySelector('.content-story').classList.remove('hidden');
+}
+
+document.querySelectorAll('.button-nav').forEach(x => {
+    x.addEventListener('click', () => {
+        HideMenus();
+        document.querySelector('.menu-' + x.innerText.toLowerCase()).classList.remove('hidden');
+    });
+});
+
+document.querySelectorAll('.button-content').forEach(x => {
+    x.addEventListener('click', () => {
+        HideMenus();
+        document.querySelector('.content-' + x.innerText.toLowerCase()).classList.remove('hidden');
+    });
+});

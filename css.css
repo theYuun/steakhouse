@@ -216,7 +216,8 @@ h2{
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
         'name name name'
-        'desc pic ingr';
+        'desc pic ingr'
+        'desc pic pricing';
     grid-gap: 5px;
 }
 
@@ -242,8 +243,42 @@ h2{
     text-align: left;
 }
 
+.menu dd:nth-of-type(3) h4{
+    margin-bottom: 5px;
+}
+
+.menu dd:nth-of-type(4){
+    grid-area: pricing;
+    text-align: left;
+    margin-top: 5px;
+}
+
 .image-menu-item{
+    position: relative;
     width: 200px;
+    height: 150px;
+    /*
+    aspect-ratio: 1.5;
+    */
+}
+
+.image-menu-item-after, .image-menu-item-before{
+    position: absolute;
+    bottom: 0px;
+    background-color: #ffffff;
+    width: 200px;
+    height: 30px;
+    z-index: 10;
+}
+
+.image-menu-item-after{
+    transform: rotateZ(10deg);
+    left: 0px;
+}
+
+.image-menu-item-before{
+    transform: rotateZ(-10deg);
+    right: 0px;
 }
 
 .content div{
