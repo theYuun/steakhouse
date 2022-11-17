@@ -1,307 +1,307 @@
 {
     "menu": [
     {
-        "categories":[
+        "categoryId": 1,
+        "categoryName": "breakfast",
+        "categoryClassAlternative": "b",
+        "slotTimeStart": 8,
+        "slotTimeEnd": 12,
+        "slotOptions": [
         {
-            "categoryId": 100,
-            "categoryName": "breakfast",
-            "categoryClassAlternative": "b",
-            "slotTimeStart": 8,
-            "slotTimeEnd": 12,
-            "slotOptions": [
+            "optId": 1,
+            "optName": "Lorem ipsum",
+            "optDescription": "Dolor sit amet. Consectetur adipiscing elit. Soluta optio corrupti quos.",
+            "optIngredients": ["dolor", "sit amet", "consectetur", "adipiscing elit", "soluta optio", "corrupti", "quos"],
+            "optPriceCents": 9999,
+            "optPriceAlternatives": [
             {
-                "optId": 101,
-                "optName": "Lorem ipsum",
-                "optDescription": "Dolor sit amet. Consectetur adipiscing elit. Soluta optio corrupti quos.",
-                "optIngredients": ["dolor", "sit amet", "consectetur", "adipiscing elit", "soluta optio", "corrupti", "quos"],
-                "optPriceCents": 9999,
-                "optPriceAlternatives": [
-                {
-                    "altId": 1011,
-                    "name": "vegetarian",
-                    "operation": "+",
-                    "price": 1000
-                },
-                {
-                    "altId": 1012,
-                    "name": "vegan",
-                    "operation": "+",
-                    "price": 1000
-                },
-                {
-                    "altId": 1013,
-                    "name": "gluten",
-                    "operation": "+",
-                    "price": 1000
-                }]
+                "altId": 1,
+                "name": "vegetarian",
+                "operation": "+",
+                "price": 1000
             },
             {
-                "optId": 102,
-                "optName": "Lorem ipsum",
-                "optDescription": "Dolor sit amet. Consectetur adipiscing elit. Soluta optio corrupti quos.",
-                "optIngredients": ["dolor", "sit amet", "consectetur", "adipiscing elit", "soluta optio", "corrupti", "quos"],
-                "optPriceCents": 9999,
-                "optPriceAlternatives": [
-                {
-                    "altId": 1021,
-                    "name": "vegan",
-                    "operation": "+",
-                    "price": 1000
-                },
-                {
-                    "altId": 1022,
-                    "name": "gluten",
-                    "operation": "+",
-                    "price": 1000
-                }]
+                "altId": 2,
+                "name": "vegan",
+                "operation": "+",
+                "price": 1000
             },
             {
-                "optId": 103,
-                "optName": "Lorem ipsum",
-                "optDescription": "Dolor sit amet. Consectetur adipiscing elit. Soluta optio corrupti quos.",
-                "optIngredients": ["dolor", "sit amet", "consectetur", "adipiscing elit", "soluta optio", "corrupti", "quos"],
-                "optPriceCents": 9999,
-                "optPriceAlternatives": [
-                {
-                    "altId": 1031,
-                    "name": "vegan",
-                    "operation": "+",
-                    "price": 1000
-                },
-                {
-                    "altId": 1032,
-                    "name": "gluten",
-                    "operation": "+",
-                    "price": 1000
-                }]
+                "altId": 3,
+                "name": "gluten",
+                "operation": "+",
+                "price": 1000
             }]
         },
         {
-            "categoryId": 200,
-            "categoryName": "lunch",
-            "categoryClassAlternative": "l",
-            "slotTimeStart": 12,
-            "slotTimeEnd": 16,
-            "slotOptions": [
+            "optId": 2,
+            "optName": "Lorem ipsum",
+            "optDescription": "Dolor sit amet. Consectetur adipiscing elit. Soluta optio corrupti quos.",
+            "optIngredients": ["dolor", "sit amet", "consectetur", "adipiscing elit", "soluta optio", "corrupti", "quos"],
+            "optPriceCents": 9999,
+            "optPriceAlternatives": [
             {
-                "optId": 201,
-                "optName": "",
-                "optDescription": "",
-                "optIngredients": ["",""],
-                "optPriceCents": 0,
-                "optPriceAlternatives": [
-                {
-                    "altId": 0,
-                    "altName": "",
-                    "altOperation": "+",
-                    "altPrice": 0
-                },
-                {
-                    "altId": 0,
-                    "altName": "",
-                    "altOperation": "+",
-                    "altPrice": 0
-                }]
+                "altId": 1,
+                "name": "vegan",
+                "operation": "+",
+                "price": 1000
             },
             {
-                "optId": 202,
-                "optName": "",
-                "optDescription": "",
-                "optIngredients": ["",""],
-                "optPriceCents": 0,
-                "optPriceAlternatives": [
-                {
-                    "altId": 0,
-                    "altName": "",
-                    "altOperation": "+",
-                    "altPrice": 0
-                },
-                {
-                    "altId": 0,
-                    "altName": "",
-                    "altOperation": "+",
-                    "altPrice": 0
-                }]
-            },
-            {
-                "optId": 203,
-                "optName": "",
-                "optDescription": "",
-                "optIngredients": ["",""],
-                "optPriceCents": 0,
-                "optPriceAlternatives": [
-                {
-                    "altId": 0,
-                    "altName": "",
-                    "altOperation": "+",
-                    "altPrice": 0
-                },
-                {
-                    "altId": 0,
-                    "altName": "",
-                    "altOperation": "+",
-                    "altPrice": 0
-                }]
-            },
-            {
-                "optId": 204,
-                "optName": "",
-                "optDescription": "",
-                "optIngredients": ["",""],
-                "optPriceCents": 0,
-                "optPriceAlternatives": [
-                {
-                    "altId": 0,
-                    "altName": "",
-                    "altOperation": "+",
-                    "altPrice": 0
-                },
-                {
-                    "altId": 0,
-                    "altName": "",
-                    "altOperation": "+",
-                    "altPrice": 0
-                }]
+                "altId": 2,
+                "name": "gluten",
+                "operation": "+",
+                "price": 1000
             }]
         },
         {
-            "categoryId": 300,
-            "categoryName": "dinner",
-            "categoryClassAlternative": "d",
-            "slotTimeStart": 16,
-            "slotTimeEnd": 20,
-            "slotOptions": [
+            "optId": 3,
+            "optName": "Lorem ipsum",
+            "optDescription": "Dolor sit amet. Consectetur adipiscing elit. Soluta optio corrupti quos.",
+            "optIngredients": ["dolor", "sit amet", "consectetur", "adipiscing elit", "soluta optio", "corrupti", "quos"],
+            "optPriceCents": 9999,
+            "optPriceAlternatives": [
             {
-                "optId": 301,
-                "optName": "",
-                "optDescription": "",
-                "optIngredients": ["",""],
-                "optPriceCents": 0,
-                "optPriceAlternatives": [
-                {
-                    "altId": 0,
-                    "altName": "",
-                    "altOperation": "+",
-                    "altPrice": 0
-                },
-                {
-                    "altId": 0,
-                    "altName": "",
-                    "altOperation": "+",
-                    "altPrice": 0
-                }]
+                "altId": 1,
+                "name": "vegan",
+                "operation": "+",
+                "price": 1000
             },
             {
-                "optId": 302,
-                "optName": "",
-                "optDescription": "",
-                "optIngredients": ["",""],
-                "optPriceCents": 0,
-                "optPriceAlternatives": [
-                {
-                    "altId": 0,
-                    "altName": "",
-                    "altOperation": "+",
-                    "altPrice": 0
-                },
-                {
-                    "altId": 0,
-                    "altName": "",
-                    "altOperation": "+",
-                    "altPrice": 0
-                }]
+                "altId": 2,
+                "name": "gluten",
+                "operation": "+",
+                "price": 1000
+            }]
+        }]
+    },
+    {
+        "categoryId": 2,
+        "categoryName": "lunch",
+        "categoryClassAlternative": "l",
+        "slotTimeStart": 12,
+        "slotTimeEnd": 16,
+        "slotOptions": [
+        {
+            "optId": 1,
+            "optName": "",
+            "optDescription": "",
+            "optIngredients": ["",""],
+            "optPriceCents": 0,
+            "optPriceAlternatives": [
+            {
+                "altId": 0,
+                "altName": "",
+                "altOperation": "+",
+                "altPrice": 0
+            },
+            {
+                "altId": 0,
+                "altName": "",
+                "altOperation": "+",
+                "altPrice": 0
             }]
         },
         {
-            "categoryId": 400,
-            "categoryName": "kids",
-            "categoryClassAlternative": "k",
-            "slotTimeStart": 8,
-            "slotTimeEnd": 20,
-            "slotOptions": [
+            "optId": 2,
+            "optName": "",
+            "optDescription": "",
+            "optIngredients": ["",""],
+            "optPriceCents": 0,
+            "optPriceAlternatives": [
             {
-                "optId": 401,
-                "optName": "",
-                "optDescription": "",
-                "optIngredients": ["",""],
-                "optPriceCents": 0,
-                "optPriceAlternatives": [
-                {
-                    "altId": 0,
-                    "altName": "",
-                    "altOperation": "+",
-                    "altPrice": 0
-                },
-                {
-                    "altId": 0,
-                    "altName": "",
-                    "altOperation": "+",
-                    "altPrice": 0
-                }]
+                "altId": 0,
+                "altName": "",
+                "altOperation": "+",
+                "altPrice": 0
             },
             {
-                "optId": 402,
-                "optName": "",
-                "optDescription": "",
-                "optIngredients": ["",""],
-                "optPriceCents": 0,
-                "optPriceAlternatives": [
-                {
-                    "altId": 0,
-                    "altName": "",
-                    "altOperation": "+",
-                    "altPrice": 0
-                },
-                {
-                    "altId": 0,
-                    "altName": "",
-                    "altOperation": "+",
-                    "altPrice": 0
-                }]
+                "altId": 0,
+                "altName": "",
+                "altOperation": "+",
+                "altPrice": 0
             }]
         },
         {
-            "categoryId": 500,
-            "categoryName": "beverages",
-            "categoryClassAlternative": "bevs",
-            "slotTimeStart": 8,
-            "slotTimeEnd": 20,
-            "slotOptions": [
+            "optId": 3,
+            "optName": "",
+            "optDescription": "",
+            "optIngredients": ["",""],
+            "optPriceCents": 0,
+            "optPriceAlternatives": [
             {
-                "optId": 501,
-                "optName": "Filter Coffee",
-                "optDescription": "",
-                "optIngredients": ["",""],
-                "optPriceCents": 9999,
-                "optPriceAlternatives": [
-                {
-                    "altId": 5011,
-                    "altName": "almond milk",
-                    "altOperation": "+",
-                    "altPrice": 1000
-                },
-                {
-                    "altId": 5012,
-                    "altName": "soy milk",
-                    "altOperation": "+",
-                    "altPrice": 1000
-                },
-                {
-                    "altId": 5013,
-                    "altName": "creamer",
-                    "altOperation": "+",
-                    "altPrice": 1000
-                }]
+                "altId": 0,
+                "altName": "",
+                "altOperation": "+",
+                "altPrice": 0
+            },
+            {
+                "altId": 0,
+                "altName": "",
+                "altOperation": "+",
+                "altPrice": 0
+            }]
+        },
+        {
+            "optId": 4,
+            "optName": "",
+            "optDescription": "",
+            "optIngredients": ["",""],
+            "optPriceCents": 0,
+            "optPriceAlternatives": [
+            {
+                "altId": 0,
+                "altName": "",
+                "altOperation": "+",
+                "altPrice": 0
+            },
+            {
+                "altId": 0,
+                "altName": "",
+                "altOperation": "+",
+                "altPrice": 0
+            }]
+        }]
+    },
+    {
+        "categoryId": 3,
+        "categoryName": "dinner",
+        "categoryClassAlternative": "d",
+        "slotTimeStart": 16,
+        "slotTimeEnd": 20,
+        "slotOptions": [
+        {
+            "optId": 1,
+            "optName": "",
+            "optDescription": "",
+            "optIngredients": ["",""],
+            "optPriceCents": 0,
+            "optPriceAlternatives": [
+            {
+                "altId": 0,
+                "altName": "",
+                "altOperation": "+",
+                "altPrice": 0
+            },
+            {
+                "altId": 0,
+                "altName": "",
+                "altOperation": "+",
+                "altPrice": 0
+            }]
+        },
+        {
+            "optId": 2,
+            "optName": "",
+            "optDescription": "",
+            "optIngredients": ["",""],
+            "optPriceCents": 0,
+            "optPriceAlternatives": [
+            {
+                "altId": 0,
+                "altName": "",
+                "altOperation": "+",
+                "altPrice": 0
+            },
+            {
+                "altId": 0,
+                "altName": "",
+                "altOperation": "+",
+                "altPrice": 0
+            }]
+        }]
+    },
+    {
+        "categoryId": 4,
+        "categoryName": "kids",
+        "categoryClassAlternative": "k",
+        "slotTimeStart": 8,
+        "slotTimeEnd": 20,
+        "slotOptions": [
+        {
+            "optId": 1,
+            "optName": "",
+            "optDescription": "",
+            "optIngredients": ["",""],
+            "optPriceCents": 0,
+            "optPriceAlternatives": [
+            {
+                "altId": 0,
+                "altName": "",
+                "altOperation": "+",
+                "altPrice": 0
+            },
+            {
+                "altId": 0,
+                "altName": "",
+                "altOperation": "+",
+                "altPrice": 0
+            }]
+        },
+        {
+            "optId": 2,
+            "optName": "",
+            "optDescription": "",
+            "optIngredients": ["",""],
+            "optPriceCents": 0,
+            "optPriceAlternatives": [
+            {
+                "altId": 0,
+                "altName": "",
+                "altOperation": "+",
+                "altPrice": 0
+            },
+            {
+                "altId": 0,
+                "altName": "",
+                "altOperation": "+",
+                "altPrice": 0
+            }]
+        }]
+    },
+    {
+        "categoryId": 5,
+        "categoryName": "beverages",
+        "categoryClassAlternative": "bevs",
+        "slotTimeStart": 8,
+        "slotTimeEnd": 20,
+        "slotOptions": [
+        {
+            "optId": 1,
+            "optName": "Filter Coffee",
+            "optDescription": "",
+            "optIngredients": ["",""],
+            "optPriceCents": 9999,
+            "optPriceAlternatives": [
+            {
+                "altId": 1,
+                "altName": "almond milk",
+                "altOperation": "+",
+                "altPrice": 1000
+            },
+            {
+                "altId": 2,
+                "altName": "soy milk",
+                "altOperation": "+",
+                "altPrice": 1000
+            },
+            {
+                "altId": 3,
+                "altName": "creamer",
+                "altOperation": "+",
+                "altPrice": 1000
             }]
         }]
     }],
-    "story": [
+    "footer": [
     {
-        "sections":[
+        "footerName": "story",
+        "footerHeading": "our story",
+        "footerFieldsets":[
         {
-            "secId": 0,
-            "secName": "Lorem",
-            "secDetails":[
+            "fieldsetId": 0,
+            "fieldsetLegend": "Lorem",
+            "fieldsetHasImage": true,
+            "fieldsetDetails":[
                 "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus qui possimus vero corporis odit est itaque quod fugiat.",
                 "Commodi repellendus aut molestiae eos, veniam officia, fugit porro impedit beatae quo!",
                 "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus qui possimus vero corporis odit est itaque quod fugiat.",
@@ -309,9 +309,10 @@
             ]
         },
         {
-            "secId": 1,
-            "secName": "Ipsum",
-            "secDetails":[
+            "fieldsetId": 1,
+            "fieldsetLegend": "Ipsum",
+            "fieldsetHasImage": true,
+            "fieldsetDetails":[
                 "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus qui possimus vero corporis odit est itaque quod fugiat.",
                 "Commodi repellendus aut molestiae eos, veniam officia, fugit porro impedit beatae quo!",
                 "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus qui possimus vero corporis odit est itaque quod fugiat.",
@@ -319,9 +320,10 @@
             ]
         },
         {
-            "secId": 2,
-            "secName": "Dolor",
-            "secDetails":[
+            "fieldsetId": 2,
+            "fieldsetLegend": "Dolor",
+            "fieldsetHasImage": true,
+            "fieldsetDetails":[
                 "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus qui possimus vero corporis odit est itaque quod fugiat.",
                 "Commodi repellendus aut molestiae eos, veniam officia, fugit porro impedit beatae quo!",
                 "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus qui possimus vero corporis odit est itaque quod fugiat.",
@@ -329,9 +331,10 @@
             ]
         },
         {
-            "secId": 3,
-            "secName": "Sit",
-            "secDetails":[
+            "fieldsetId": 3,
+            "fieldsetLegend": "Sit",
+            "fieldsetHasImage": true,
+            "fieldsetDetails":[
                 "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus qui possimus vero corporis odit est itaque quod fugiat.",
                 "Commodi repellendus aut molestiae eos, veniam officia, fugit porro impedit beatae quo!",
                 "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus qui possimus vero corporis odit est itaque quod fugiat.",
@@ -339,14 +342,67 @@
             ]
         },
         {
-            "secId": 4,
-            "secName": "Amet",
-            "secDetails":[
+            "fieldsetId": 4,
+            "fieldsetLegend": "Amet",
+            "fieldsetHasImage": true,
+            "fieldsetDetails":[
                 "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus qui possimus vero corporis odit est itaque quod fugiat.",
                 "Commodi repellendus aut molestiae eos, veniam officia, fugit porro impedit beatae quo!",
                 "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus qui possimus vero corporis odit est itaque quod fugiat.",
                 "Commodi repellendus aut molestiae eos, veniam officia, fugit porro impedit beatae quo!"
             ]
+        }]
+    },
+    {
+        "footerName": "contact",
+        "footerHeading": "get in touch",
+        "footerFieldsets":[
+        {
+            "fieldsetId": 1,
+            "fieldsetLegend": "phone",
+            "fieldsetHasImage": false,
+            "fieldsetDetails": [
+                1234567890
+            ]
+        },
+        {
+            "fieldsetId": 2,
+            "fieldsetLegend": "email",
+            "fieldsetHasImage": false,
+            "fieldsetDetails": [
+                "steaks@steakhouse.com"
+            ]
+        }]
+    },
+    {
+        "footerName": "locale",
+        "footerHeading": "the best steak is here",
+        "footerFieldsets":[
+        {
+            "fieldsetId": 1,
+            "fieldsetLegend": "address",
+            "fieldsetHasImage": false,
+            "fieldsetDetails": [
+                12,
+                "Steak Avenue",
+                "Steaksville",
+                1234
+            ],
+            "fieldsetSpecialDetails":[
+            {
+                "id": "gmap_canvas",
+                "specialType": "iframe",
+                "src": "https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=15&ie=UTF8&iwloc=&output=embed",
+                "specialDetails": [
+                {
+                    "width": 450,
+                    "height": 450,
+                    "frameborder": "0",
+                    "scrolling": "no",
+                    "marginheight": "0",
+                    "marginwidth": "0"
+                }]
+            }]
         }]
     }]
 }

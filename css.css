@@ -34,15 +34,8 @@ html{
     font-family: 'Rokkitt', 'Helvetica Neue';
 }
 
-body{
-}
-
-img{
-    border: 3px solid rgb(20,20,20);
-    border-radius: 10px;
-    background-clip: padding-box;
-    box-shadow: 0px 10px 10px -5px black;
-    margin-bottom: 20px;
+.hidden{
+    display: none;
 }
 
 .background-image{
@@ -251,10 +244,24 @@ h2{
     margin-top: 5px;
 }
 
-.image-menu-item{
-    position: relative;
+div:has( > .image-story),
+dd:has( > .image-menu-item) {
+    background-color: red;
     width: 200px;
     height: 150px;
+    
+    border: 3px solid rgb(20,20,20);
+    border-radius: 10px;
+    background-clip: padding-box;
+    box-shadow: 0px 10px 10px -5px black;
+    margin: auto;
+    margin-bottom: 15px;
+
+    overflow: hidden;
+}
+
+.image-menu-item{
+    width: 100%;
     /*
     aspect-ratio: 1.5;
     */
@@ -279,31 +286,64 @@ h2{
     right: 0px;
 }
 
-.content div{
-    overflow: hidden;
+.content fieldset{
+    width: 100%;
     line-height: .9rem;
     padding: 10px;
     text-align: justify;
+    border: none;
+    border-top: 3px solid #000;
+    margin-top: 30px;
 }
 
-.image-story{
+.content legend{
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 10px 10px;
+}
+
+div:has( > .image-story)
+{
+    float: left;
+    margin-right: 20px;
     width: 300px;
+    height: 200px;
+    padding: 0px;
+}
+
+div:has( > .image-story-2, > .image-story-4){
+    float: right;
+    margin-left: 20px;
 }
 /*
 */
-.image-story-01, .image-story-03, .image-story-05{
-    float: left;
-    margin-right: 20px;
+.image-story{
+    width: 100%;
 }
 
-.image-story-02, .image-story-04{
-    float: right;
-    margin-right: 0px;
-    margin-left: 20px;
+/* GET IN TOUCH */
+.content-contact fieldset
+{
+
 }
 
-.hidden{
-    display: none;
+.content-contact legend
+{
+    text-align: left;
+}
+
+.content-contact fieldset p
+{
+    text-indent: 20px;
+}
+
+/* LOCALE */
+.gmap_canvas{
+    overflow:hidden;
+    background:none!important;
+    border-radius: 20px;
+    border: 2px solid #000;
+    background-clip: padding-box;
 }
 
 footer{
@@ -342,8 +382,13 @@ footer hr{
 }
 
 @media only screen and (max-width: 750px) {
+    
+    
     /*
+    This will select parents with x number of children using css only
+    div:has(:last-child:nth-child())
     */
+
     :root{
         --main-top: 120px;
         --bg-gradient-top-transition-start: 170px;
@@ -408,8 +453,8 @@ footer hr{
     }
 
     main{
-        width: 300px;
-        margin-left: calc(50% - 150px);
+        width: 90%;
+        margin-left: 5%;
     }
 
     .menu ul li{
@@ -425,10 +470,17 @@ footer hr{
         bottom: -18px;
     }
 
-    .image-story, .image-menu-item{
+    div:has( > .image-story),
+    dd:has( > .image-menu-item){
         float: top;
-        margin: 10px 40px 20px;
-        width: 200px;
+        margin: 10px 0px 20px;
+        width: 100%;
+    }
+
+    .image-story{
+        width: 100%;
+        height: auto;
+        transform: translateY(-50px);
     }
 
 }

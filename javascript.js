@@ -2,20 +2,77 @@
 // Getting Story Data from data.json
 
 const data = import('./data.json', { assert: { type: 'json' }});
-data.then((d) => FillMenu(d.default.menu[0]));// console.log(d.default.menu[0].categories[0].categoryId));
+data.then((d) => FillMenu(d.default));// console.log(d.default.menu[0].categories[0].categoryId));
+//data.then((d) => FillStory(d.default.story[0]));
 
 let main = document.querySelector('main');
-function FillMenu(data)
+function FillMenu(d)
 {
-    for(let menuCategory = 0; menuCategory < data.categories.length; menuCategory++)
+    let data = d.footer;
+
+    for(let footerLink = 0; footerLink < data.length; footerLink++)
     {
-        let category = data.categories[menuCategory].categoryName;
-        let categoryTimes = [data.categories[menuCategory].slotTimeStart, data.categories[menuCategory].slotTimeEnd];
+        let footerSection = document.createElement('section');
+        let sectionName = data[footerLink].footerName;
+        footerSection.setAttribute('id', 'content-' + sectionName);
+        footerSection.className = 'content';
+        footerSection.classList.add('content-' + data[footerLink].footerName);
+        
+        let footerSecH = document.createElement('h2');
+        let sectionHeading = data[footerLink].footerHeading.toUpperCase();
+        footerSecH.innerText = sectionHeading;
+        footerSection.appendChild(footerSecH);
+        
+        let footerSecHHr = document.createElement('hr');
+        footerSection.appendChild(footerSecHHr);
+        main.appendChild(footerSection);
+
+        for(let footerFieldset = 0; footerFieldset < data[footerLink].footerFieldsets.length; footerFieldset++) {
+
+            let fieldset = document.createElement('fieldset');
+            footerSection.appendChild(fieldset);
+
+            let fieldsetLegend = document.createElement('legend');
+            let fieldsetLegendH = document.createElement('h3');
+            let fieldsetLegendHeading = data[footerLink].footerFieldsets[footerFieldset].fieldsetLegend;
+            fieldsetLegendH.innerText = fieldsetLegendHeading.charAt(0).toUpperCase() + fieldsetLegendHeading.slice(1);
+            fieldsetLegend.appendChild(fieldsetLegendH);
+            fieldset.appendChild(fieldsetLegend);
+            
+            if(data[footerLink].footerFieldsets[footerFieldset].fieldsetHasImage)
+            {
+                let fieldsetImageContainer = document.createElement('div');
+                fieldset.appendChild(fieldsetImageContainer);
+                
+                let fieldsetImage = document.createElement('img');
+                fieldsetImage.setAttribute('src', 'images/' + sectionName.toLowerCase() + '-' + (footerFieldset + 1).toString() + '.jpg');
+                fieldsetImage.className = 'image-' + sectionName.toLowerCase();
+                fieldsetImage.classList.add('image-' + sectionName.toLowerCase() + '-' + (footerFieldset + 1).toString());
+                fieldsetImageContainer.appendChild(fieldsetImage);
+            }
+            
+            for(let fieldsetDetail = 0; fieldsetDetail < data[footerLink].footerFieldsets[footerFieldset].fieldsetDetails.length; fieldsetDetail++)
+            {
+                let fieldsetText = document.createElement('p');
+                fieldsetText.innerText = data[footerLink].footerFieldsets[footerFieldset].fieldsetDetails[fieldsetDetail].toString();
+                fieldset.appendChild(fieldsetText);
+
+            }
+
+            footerSection.appendChild(fieldset);
+        }
+    }
+
+    data = d.menu;
+    for(let menuCategory = 0; menuCategory < data.length; menuCategory++)
+    {
+        let category = data[menuCategory].categoryName;
+        let categoryTimes = [data[menuCategory].slotTimeStart, data[menuCategory].slotTimeEnd];
         let section = document.createElement('section');
-        section.setAttribute('id', 'menu-' + data.categories[menuCategory].categoryName.toLowerCase());
-        section.classList.add('menu');
-        section.classList.add('menu-' + data.categories[menuCategory].categoryName.toLowerCase());
-        section.classList.add('menu-' + data.categories[menuCategory].categoryClassAlternative.toLowerCase());
+        section.setAttribute('id', 'menu-' + data[menuCategory].categoryName.toLowerCase());
+        section.className = 'menu';
+        section.classList.add('menu-' + data[menuCategory].categoryName.toLowerCase());
+        section.classList.add('menu-' + data[menuCategory].categoryClassAlternative.toLowerCase());
         let sectionH = document.createElement('h2');
         sectionH.innerText = category.charAt(0).toUpperCase() + category.slice(1);
         let sectionHHr = document.createElement('hr');
@@ -24,7 +81,7 @@ function FillMenu(data)
         section.appendChild(sectionHHr);
         section.appendChild(sectionUl);
 
-        let slotOptions = data.categories[menuCategory].slotOptions;
+        let slotOptions = data[menuCategory].slotOptions;
         for(let slotOption = 0; slotOption < slotOptions.length; slotOption++)
         {
             let sectionUlLi = document.createElement('li');
@@ -41,14 +98,14 @@ function FillMenu(data)
             let slotImage = document.createElement('img');
             //console.log('images/' + category + '-' + slotOptions[slotOption].optId + '.jpg');
             slotImage.src = 'images/' + category + '-' + slotOptions[slotOption].optId + '.jpg';
-            slotImage.setAttribute('class', 'image-menu-item')
+            slotImage.className = 'image-menu-item';
             slotImageContainer.appendChild(slotImage);
             
             let slotImageShadowLeft = document.createElement('div');
-            slotImageShadowLeft.setAttribute('class', 'image-menu-item-before');
+            slotImageShadowLeft.className = 'image-menu-item-before';
             slotImage.appendChild(slotImageShadowLeft);
             let slotImageShadowRight = document.createElement('div');
-            slotImageShadowRight.setAttribute('class', 'image-menu-item-after');
+            slotImageShadowRight.className = 'image-menu-item-after';
             slotImage.appendChild(slotImageShadowRight);
 
             let slotIngredients = document.createElement('dd');
